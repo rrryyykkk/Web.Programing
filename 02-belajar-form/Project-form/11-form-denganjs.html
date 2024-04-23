@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio button dengan js</title>
+    <style>
+      button {
+        margin-top: 1rem;
+      }
+
+      input {
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <form>
+          <div>
+            <fieldset>
+              <legend>What is your favorite web technology?</legend>
+              <input type="radio" name="webfeature" value="html" id="html" class="radioField" data-controls="html-additional" />
+              <label for="html">HTML</label>
+              <div class="additional" id="html-additional"><label for="html-element">What is your favorite HTML element?</label> <input type="text" id="html-element" name="html-element" /></div>
+              <input type="radio" name="webfeature" value="css" id="css" class="radioField" data-controls="css-additional" />
+              <label for="css">CSS</label>
+              <div class="additional" id="css-additional"><label for="css-property">What is your favorite CSS property?</label> <input type="text" id="css-property" name="css-property" /></div>
+            </fieldset>
+          </div>
+          <button>Save</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Script dengan js -->
+    <script>
+      const additionalFields = document.querySelectorAll(".additional");
+      const radioFields = document.querySelectorAll(".radioField");
+
+      if (additionalFields && additionalFields.length > 0) {
+        [...additionalFields].forEach((additionalField) => {
+          additionalField.hidden = true;
+        });
+      }
+
+      if (radioFields && radioFields.length > 0) {
+        [...radioFields].forEach((radioField) => {
+          radioField.setAttribute("aria-expanded", false);
+          radioField.setAttribute("aria-controls", radioField.dataset.controls);
+
+          radioField.addEventListener("click", (event) => {
+            const additionalField = document.getElementById(event.target.getAttribute("aria-controls"));
+            let isChecked = event.target.checked;
+
+            [...additionalFields].forEach((additionalField) => {
+              additionalField.hidden = true;
+            });
+
+            if (isChecked) {
+              event.target.setAttribute("aria-expanded", true);
+              additionalField.hidden = false;
+            } else {
+              event.target.setAttribute("aria-expanded", false);
+              additionalField.hidden = true;
+            }
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

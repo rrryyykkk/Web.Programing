@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pembayaran</title>
+    <style>
+      form {
+        width: 90vw;
+        max-width: 20em;
+      }
+
+      button {
+        margin-top: 2rem;
+      }
+
+      input {
+        border: 1px solid;
+        padding: 0.3em;
+        width: 100%;
+      }
+
+      label {
+        display: block;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+
+      .date-code {
+        display: flex;
+        margin: 0 -1em;
+      }
+
+      .date-code div {
+        margin: 0 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <form>
+          <div>
+            <label for="name">Nama di Kartu</label>
+            <input required type="text" id="name" name="name" autocomplete="cc-name" />
+          </div>
+          <div class="card-number">
+            <label>No Kartu</label>
+            <input required type="text" id="card-number" name="card-number" inputmode="numeric" autcomplete="cc-number" pattern="[0-9]+" />
+          </div>
+          <div class="date-code">
+            <div>
+              <label for="expiry-date">Data berakhir</label>
+              <input required type="text" id="expiry-date" name="expiry-date" class="expiry-date" autocomplete="cc-exp" placeholder="MM/YY" minlength="4" pattern="[0-9/]+" />
+            </div>
+            <div>
+              <label for="security-code">Kode Keamanan</label>
+              <input required type="text" id="security-code" name="security-code" inputmode="numeric" minlength="3" maxlength="4" pattern="[0-9]+" />
+            </div>
+          </div>
+          <button>Bayar Rp300.00</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

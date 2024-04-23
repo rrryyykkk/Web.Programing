@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membuat form lengkap</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+      }
+
+      label,
+      input,
+      textarea,
+      select,
+      button {
+        font-size: 1.3rem;
+        line-height: 1.2;
+      }
+
+      form {
+        width: 30em;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
+      form div {
+        margin-top: 1rem;
+      }
+
+      label {
+        margin-bottom: 0.4rem;
+        display: block;
+      }
+
+      input,
+      textarea {
+        padding: 0.4rem;
+        width: 100%;
+        border: 1px solid;
+      }
+
+      button {
+        margin-top: 2rem;
+        background: #3740ff;
+        color: #fff;
+        border: none;
+        padding: 0.6rem;
+      }
+
+      button:hover,
+      button:focus {
+        background: #272eb5;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div>
+            <label for="comment">Comment</label>
+            <textarea name="comment" id="comment"></textarea>
+          </div>
+          <div>
+            <label for="continent">Continent</label>
+            <select name="continent" id="continent">
+              <option value="africa">Africa</option>
+              <option value="antarctica">Antarctica</option>
+              <option value="asia">Asia</option>
+              <option value="australia">Australia</option>
+              <option value="europe">Europe</option>
+              <option value="north-america">North America</option>
+              <option value="south-america">South America</option>
+            </select>
+          </div>
+          <button>Save</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
