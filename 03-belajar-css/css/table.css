@@ -1,0 +1,35 @@
+table,
+tr,
+th,
+td {
+  border-style: solid;
+  border-width: 2px;
+  margin: 0px;
+  padding: 0px;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  text-align: center;
+}
+
+tr:hover {
+  background-color: pink;
+}
+
+.ganjil {
+  background-color: pink;
+}
+
+.genap {
+  background-color: grey;
+}
+
+table {
+  width: 200px;
+  height: 200px;
+}
