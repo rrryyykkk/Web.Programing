@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Attribute Selector</title>
+  </head>
+  <body>
+    <div class="rohmat">Rohmat</div>
+    <div class="rohmatarief">Arief</div>
+    <div class="rohmatbudiarto">Budiarto</div>
+
+    <script>
+      const list = document.querySelectorAll("div[class^=rohmat]");
+      console.info(list);
+    </script>
+  </body>
+</html>
